@@ -1,13 +1,9 @@
-import Home from "./HomePage/Home";
 import "../sass/main.scss";
-import "../sass/fonts.scss";
-import "../sass/mixins.scss";
-import "../sass/variables.scss";
-
+import Navbar from "../components/Navbar";
 const Main = () => {
   return (
     <>
-      <Home />
+      <Navbar />
     </>
   );
 };
