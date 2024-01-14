@@ -2,32 +2,116 @@
 @import "../sass/mixins.scss";
 
 header {
-  background-image: url(../assets/images/Header.jpg);
+  background-image: url(../assets/images/bg.png);
   width: 100%;
   height: 613px;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
+  background-position-x: right;
 }
 
-nav {
-  position: fixed;
-  width: 100%;
-  z-index: 4;
-  top: 0;
-}
+// nav {
+//   position: fixed;
+//   width: 100%;
+//   z-index: 4;
+//   top: 0;
+// }
 
 .navbar {
+  position: relative;
+  z-index: 3;
+  @include for-tablet {
+    align-items: flex-start;
+  }
   &__ul {
+    @include for-tablet {
+      display: none;
+      z-index: 2;
+    }
     &__btn {
+      font-family: "Rubik-Medium";
       border-radius: 30px;
+    }
+    &__link {
+      font-family: "Rubik-Medium";
+    }
+  }
+  &__tablet {
+    transition: transform 0.3s ease-out;
+    transform: translateX(100%);
+    display: none;
+    @include for-tablet {
+      display: block;
+    }
+    &__ul {
+      background-color: rgb(0, 0, 0);
+      padding: 20px 50px;
+      height: 200px;
+      color: $white;
     }
   }
 }
+.translate-x-0 {
+  transform: translateX(14.5%);
+}
 .hero {
+  position: relative;
+
   &__title {
     font-family: "Rubik-Bold";
+    z-index: 2;
+    padding-top: 90px;
+    @include for-tablet {
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 64px;
+      padding-top: 70px;
+    }
+    @include for-phone {
+      font-size: 32px;
+      line-height: 48px;
+      padding-top: 30px;
+    }
   }
   &__text {
     font-family: "Rambla-Regular";
+    z-index: 2;
+    @include for-tablet {
+      font-size: 18px;
+      line-height: 28px;
+    }
+    @include for-phone {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+}
+.search {
+  z-index: 2;
+  @include for-tablet {
+    padding: 10px 8px;
+  }
+}
+.active {
+  border-bottom: 3px solid $white;
+}
+.close-icon {
+  font-size: 26px;
+  margin-left: 160px;
+}
+.hamburger-icon {
+  font-size: 26px;
+  margin-left: -20px;
+}
+.hero__girl {
+  position: absolute;
+  @include for-tablet {
+    width: 220px;
+    height: 420px;
+    top: 0;
+    right: -26px;
+  }
+  @include for-phone {
+    display: none;
   }
 }

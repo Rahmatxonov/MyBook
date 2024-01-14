@@ -1,5 +1,11 @@
+import Main from "../Main";
+
 const Checkout = () => {
-  return <div>Checkout</div>;
+  return (
+    <>
+      <Main />
+    </>
+  );
 };
 
 export default Checkout;

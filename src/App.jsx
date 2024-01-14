@@ -1,6 +1,6 @@
 import "./index.css";
 import Home from "./pages/HomePage/Home";
-import Explorer from "./pages/CheckoutPage/Checkout";
+// import Explorer from "./pages/CheckoutPage/Checkout";
 import Shop from "./pages/ShopPage/Shop";
 import Blog from "./pages/BlogPage/Blog";
 import NotFound from "./components/NotFound";
@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/explorer" element={<Explorer />} />
+        <Route path="/explorer" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="*" element={<NotFound />} />
