@@ -52,7 +52,7 @@ const Sidebar = ({ genres, recommendations }) => {
 
   return (
     <main className="bg-[rgba(220,220,220,0.36)]">
-      <div className="sidebar pt-[90px] ml-24">
+      <div className="sidebar pt-[90px] ml-24 pr-14">
         <ul className="sidebar__list">
           {renderGenres()}
           <hr />

@@ -8,6 +8,7 @@ import logo from "../assets/icons/MYBOOK.svg";
 import vector from "../assets/icons/Vector.svg";
 import "../sass/navbar.scss";
 import "../sass/fonts.scss";
+
 const Navbar = ({ title, text, image, style }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -63,9 +64,15 @@ const Navbar = ({ title, text, image, style }) => {
                   Blog
                 </NavLink>
               </li>
-              <button className="navbar__ul__btn py-3.5 pr-14 pl-14 bg-[#ffffff] font-medium text-[25px] leading-[29.63px] text-black">
-                Log in
-              </button>
+              <li>
+                <Link
+                  className="navbar__ul__btn py-[14px] pr-[58px] pl-[58px] bg-[#ffffff] font-normal text-[25px] leading-[20.63px] text-black mt-5"
+                  to="/login"
+                  onClick={closeMenu}
+                >
+                  Log in
+                </Link>
+              </li>
             </ul>
             <div
               className={`navbar__tablet ${
@@ -106,9 +113,15 @@ const Navbar = ({ title, text, image, style }) => {
                       Blog
                     </NavLink>
                   </li>
-                  <button className="navbar__tablet__btn py-2 pr-8 pl-8 bg-[#ffffff] font-normal text-[16px] leading-[20.63px] text-black mt-5">
-                    Log in
-                  </button>
+                  <li>
+                    <Link
+                      to="/login"
+                      className="navbar__tablet__btn py-2 pr-8 pl-8 bg-[#ffffff] font-normal text-[16px] leading-[20.63px] text-black mt-5 "
+                      onClick={closeMenu}
+                    >
+                      Log in
+                    </Link>
+                  </li>
                 </ul>
               )}
             </div>

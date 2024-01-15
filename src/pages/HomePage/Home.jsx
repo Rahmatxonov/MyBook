@@ -1,6 +1,9 @@
 import Navbar from "../../components/Navbar";
 import HeaderBg from "../../assets/images/headerbg.png";
 import Sidebar from "../../components/Sidebar";
+import Recommended from "../../components/Recommended";
+import Populer from "../../components/Populer";
+import Footer from "../../components/Footer";
 const Home = () => {
   return (
     <>
@@ -16,22 +19,29 @@ const Home = () => {
           right: "-30px",
         }}
       />
-      <Sidebar
-        genres={[
-          "All Genres",
-          "Business",
-          "Science",
-          "Fiction",
-          "Philosophy",
-          "Biography",
-        ]}
-        recommendations={[
-          "Artist of the Month",
-          "Book of the Year",
-          "Top Genre",
-          "Trending",
-        ]}
-      />{" "}
+      <div className="flex">
+        <Sidebar
+          genres={[
+            "All Genres",
+            "Business",
+            "Science",
+            "Fiction",
+            "Philosophy",
+            "Biography",
+          ]}
+          recommendations={[
+            "Artist of the Month",
+            "Book of the Year",
+            "Top Genre",
+            "Trending",
+          ]}
+        />{" "}
+        <div className="w-full">
+          <Recommended />
+          <Populer />
+        </div>
+      </div>
+      <Footer />
     </>
   );
 };

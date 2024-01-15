@@ -4,8 +4,8 @@ import Home from "./pages/HomePage/Home";
 import Shop from "./pages/ShopPage/Shop";
 import Blog from "./pages/BlogPage/Blog";
 import NotFound from "./components/NotFound";
-import "./sass/main.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/LoginPage/Login";
 function App() {
   return (
     <BrowserRouter>
@@ -14,6 +14,7 @@ function App() {
         <Route path="/explorer" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

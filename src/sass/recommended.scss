@@ -1,0 +1,62 @@
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #000000;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-left: 4px solid #ff971d;
+  border-bottom: 4px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.recomended {
+  &__title {
+    font-family: "Rubik-Medium";
+  }
+  &__card {
+    &__text {
+      font-family: "Rubik-Regular";
+    }
+    &__authors {
+      font-family: "Rubik-Regular";
+    }
+    &__lorem {
+      font-family: "Rambla-Regular";
+    }
+    &__img {
+      width: 147px;
+      height: 225px;
+    }
+  }
+}
+.recommendedBooks {
+  width: 100%;
+  &__card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 80px;
+  }
+}

@@ -1,0 +1,25 @@
+@import "./mixins.scss";
+.block {
+  @include for-tablet {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &__title {
+    font-family: "Rubik-Bold";
+  }
+  &__text {
+    font-family: "Rambla-Regular";
+  }
+  &__card {
+    padding: 22px auto 22px auto;
+  }
+}
+.box {
+  @include for-tablet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
