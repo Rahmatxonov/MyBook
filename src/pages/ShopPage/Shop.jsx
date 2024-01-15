@@ -84,7 +84,7 @@ const Shop = () => {
                               alt={`${book.volumeInfo.title}`}
                             />
                           )}
-                        <span className="">
+                        <span className="box__span">
                           <h3 className="recomended__card__text max-w-[304px] w-full font-normal text-[25px] leading-[35px] text-black">
                             {book.volumeInfo.title}
                           </h3>

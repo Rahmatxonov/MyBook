@@ -1,3 +1,4 @@
+@import "../sass/mixins.scss";
 .btn {
   padding: 12px 89px;
   border-radius: 10px;
@@ -10,4 +11,28 @@
   line-height: normal;
   text-transform: capitalize;
   margin-top: 18px;
+}
+.recommendedBooks {
+  @include for-tablet {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+}
+.box__span {
+  @include for-tablet {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+}
+.recomended {
+  &__card {
+    @include for-tablet {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
 }
