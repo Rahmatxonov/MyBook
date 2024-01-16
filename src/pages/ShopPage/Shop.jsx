@@ -13,11 +13,12 @@ const Shop = () => {
 
   useEffect(() => {
     const fetchRecommendedBooks = async () => {
-      const apiKey = "AIzaSyCwVnuZXE2-GI7bfNtWIzfwZFApI-gvUqc";
-      const apiKey2 = "AIzaSyAsATYfUvtkZ5EK4KQ7AXmsj9Mq60S3Z3s";
+      // const apiKey = "AIzaSyCwVnuZXE2-GI7bfNtWIzfwZFApI-gvUqc";
+      // const apiKey2 = "AIzaSyAsATYfUvtkZ5EK4KQ7AXmsj9Mq60S3Z3s";
+      const apiKey3 = "AIzaSyBPObuwqcjiiU0h3s7F5zaLySOZv4xY6Qo";
       const query = "all the light";
 
-      const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&printType=books&projection=full&key=${apiKey}`;
+      const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&printType=books&projection=full&key=${apiKey3}`;
 
       try {
         const response = await axios.get(url);

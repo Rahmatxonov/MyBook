@@ -4,6 +4,40 @@
   background-repeat: no-repeat;
   height: 583px;
   padding-top: 82px;
+  &__img {
+    box-shadow: 10px 10px 10px #88888876;
+    margin-bottom: 50px;
+  }
+  &__title {
+    font-family: "Rubik-Bold";
+  }
+  &__text {
+    font-family: "Rambla-Regular";
+  }
+  &__btn {
+    border: 2px solid #ff971d;
+    font-family: "Rubik-Regular";
+  }
+  &__authors {
+    font-family: "Rubik-Regular";
+  }
+  &__description {
+    font-family: "Rambla-Regular";
+  }
+  &__viewability {
+    font-family: "Rubik-Regular";
+  }
+  &__countr {
+    font-family: "Rambla-Regular";
+  }
+  &__kind {
+    font-family: "Rambla-Regular";
+  }
+  &__comBtn {
+    border: 2px solid #ff971d;
+    margin: 74px auto;
+    font-family: "Rubik-Regular";
+  }
 }
 .back {
   font-size: 44px;

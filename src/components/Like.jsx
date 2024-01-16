@@ -16,10 +16,11 @@ const Like = () => {
 
   useEffect(() => {
     const fetchRecommendedBooks = async () => {
-      const apiKey = "AIzaSyCwVnuZXE2-GI7bfNtWIzfwZFApI-gvUqc";
+      // const apiKey = "AIzaSyCwVnuZXE2-GI7bfNtWIzfwZFApI-gvUqc";
+      const apiKey3 = "AIzaSyBPObuwqcjiiU0h3s7F5zaLySOZv4xY6Qo";
       const query = "Becomings";
 
-      const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&printType=books&projection=full&key=${apiKey}`;
+      const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&printType=books&projection=full&key=${apiKey3}`;
 
       try {
         const response = await axios.get(url);
@@ -48,9 +49,9 @@ const Like = () => {
       onSlideChange={() => console.log("slide change")}
     >
       {recommendedBooks.map((book, index) => (
-        <div className="slider max-w-[500px] p-5 " key={index}>
+        <div className="slider max-w-[500px] p-5" key={index}>
           <h3 className="text-[40px]">Populer</h3>
-          <SwiperSlide className="SwiperSlide pt-[100px]">
+          <SwiperSlide className="SwiperSlide pt-[100px] pb-20 pl-5 pr-5">
             <Link to={`/home/${book?.id}`}>
               <img
                 className="recommended__card__img"

@@ -50,7 +50,7 @@ header {
       padding: 20px 50px;
       height: 200px;
       color: $white;
-      @include for-phone {
+      @include for-tablet {
         display: flex;
         flex-direction: column;
         row-gap: 18px;
