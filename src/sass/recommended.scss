@@ -1,3 +1,4 @@
+@import "./mixins.scss";
 .loader {
   width: 48px;
   height: 48px;
@@ -11,6 +12,7 @@
   top: 50%;
   left: 50%;
 }
+
 .loader::after {
   content: "";
   box-sizing: border-box;
@@ -20,7 +22,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border-left: 4px solid #ff971d;
+  border-left: 4px solid #f6e204;
   border-bottom: 4px solid transparent;
   animation: rotation 0.5s linear infinite reverse;
 }
@@ -54,9 +56,22 @@
 }
 .recommendedBooks {
   width: 100%;
+  @include for-tablet {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
   &__card {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 80px;
+    @include for-tablet {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  &__img {
+    width: 100%s;
   }
 }

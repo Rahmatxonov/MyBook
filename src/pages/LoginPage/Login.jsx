@@ -4,7 +4,7 @@ const Register = () => {
   return (
     <>
       <div className="register-form">
-        <h2>Register</h2>
+        <h2 className="text-[32px] font-bold uppercase ">Register</h2>
         <form>
           <div className="form-group">
             <label htmlFor="username">Username</label>

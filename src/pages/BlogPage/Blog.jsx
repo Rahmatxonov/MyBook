@@ -5,6 +5,7 @@ import Book from "../../assets/images/book.png";
 import "../../sass/mixins.scss";
 import "../../sass/blog.scss";
 import Footer from "../../components/Footer";
+import { Link } from "react-router-dom";
 
 const Blog = () => {
   const [recommendedBooks, setRecommendedBooks] = useState([]);
@@ -13,6 +14,7 @@ const Blog = () => {
   useEffect(() => {
     const fetchRecommendedBooks = async () => {
       const apiKey = "AIzaSyCwVnuZXE2-GI7bfNtWIzfwZFApI-gvUqc";
+      const apiKey2 = "AIzaSyAsATYfUvtkZ5EK4KQ7AXmsj9Mq60S3Z3s";
       const query = "reactjs";
 
       const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&printType=books&projection=full&key=${apiKey}`;
@@ -59,22 +61,25 @@ const Blog = () => {
                   <div key={index} className="">
                     {book.volumeInfo.imageLinks &&
                       book.volumeInfo.imageLinks.thumbnail && (
-                        <div className="box bg-white max-w-[406px] w-full">
-                          <img
-                            className="max-w-[406px] w-full h-[344px] object-cover"
-                            src={book.volumeInfo.imageLinks.thumbnail}
-                            alt={`${book.volumeInfo.title}`}
-                          />
-                          <div className="block__card pt-[47px] pb-[47px] pl-[44px] pr-[44px]">
-                            <h3 className="block__title pt-[47px] text-center max-w-[318px] w-full text-black text-[25px] font-medium leading-[30px] capitalize">
-                              {book.volumeInfo.title}
-                            </h3>
-                            <p className="block__text max-w-[302px] w-full pt-[19px] text-black text-center text-[16px] font-normal leading-[30px] capitalize">
-                              Lorem ipsum dolor sit amet, consectetur adipiscing
-                              elit. Purus morbi eleifend enim, tristique
-                            </p>
+                        <Link to={`/home/${book?.id}`}>
+                          <div className="box bg-white max-w-[406px] w-full">
+                            <img
+                              className="max-w-[406px] w-full h-[344px] object-cover"
+                              src={book.volumeInfo.imageLinks.thumbnail}
+                              alt={`${book.volumeInfo.title}`}
+                            />
+                            <div className="block__card pt-[47px] pb-[47px] pl-[44px] pr-[44px]">
+                              <h3 className="block__title pt-[47px] text-center max-w-[318px] w-full text-black text-[25px] font-medium leading-[30px] capitalize">
+                                {book.volumeInfo.title}
+                              </h3>
+                              <p className="block__text max-w-[302px] w-full pt-[19px] text-black text-center text-[16px] font-normal leading-[30px] capitalize">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Purus morbi eleifend enim,
+                                tristique
+                              </p>
+                            </div>
                           </div>
-                        </div>
+                        </Link>
                       )}
                   </div>
                 ))}

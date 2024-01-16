@@ -10,14 +10,14 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "../sass/populer.scss";
 
-const Populer = () => {
+const Like = () => {
   const [recommendedBooks, setRecommendedBooks] = useState([]);
   const [setLoading] = useState(true);
 
   useEffect(() => {
     const fetchRecommendedBooks = async () => {
       const apiKey = "AIzaSyCwVnuZXE2-GI7bfNtWIzfwZFApI-gvUqc";
-      const query = "Popular";
+      const query = "Becomings";
 
       const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&printType=books&projection=full&key=${apiKey}`;
 
@@ -66,4 +66,4 @@ const Populer = () => {
   );
 };
 
-export default Populer;
+export default Like;

@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import star from "../assets/icons/star.svg";
 import "../sass/recommended.scss";
-const Recommended = () => {
+const Story = () => {
   const [recommendedBooks, setRecommendedBooks] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -11,7 +11,7 @@ const Recommended = () => {
     const fetchRecommendedBooks = async () => {
       const apiKey = "AIzaSyCwVnuZXE2-GI7bfNtWIzfwZFApI-gvUqc";
       const apiKey2 = "AIzaSyAsATYfUvtkZ5EK4KQ7AXmsj9Mq60S3Z3s";
-      const query = "all the light";
+      const query = "a heart so fierce and broken";
 
       const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&printType=books&projection=full&key=${apiKey}`;
 
@@ -38,8 +38,8 @@ const Recommended = () => {
             <div className="loader"></div>
           ) : (
             <div className="recommendedBooks bg-[#ffffffe4] pt-[42px] pl-[75px] shadow-xl">
-              <h2 className="recomended__title pb-[60px] font-medium text-4xl leading-[47.4px] tracking-[0.2%] max-w-[290px] w-full text-black">
-                Recommended
+              <h2 className="recomended__title pb-[60px] font-medium text-4xl leading-[47.4px] tracking-[0.2%] max-w-[290px] w-full text-black text-center">
+                This new story
               </h2>
               <div className="recommendedBooks__card">
                 {recommendedBooks.slice(0, 4).map((book, index) => (
@@ -79,4 +79,4 @@ const Recommended = () => {
   );
 };
 
-export default Recommended;
+export default Story;

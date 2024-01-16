@@ -6,6 +6,7 @@ import axios from "axios";
 import "../../sass/shop.scss";
 import star from "../../assets/icons/star.svg";
 import Footer from "../../components/Footer";
+import { Link } from "react-router-dom";
 const Shop = () => {
   const [recommendedBooks, setRecommendedBooks] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -13,6 +14,7 @@ const Shop = () => {
   useEffect(() => {
     const fetchRecommendedBooks = async () => {
       const apiKey = "AIzaSyCwVnuZXE2-GI7bfNtWIzfwZFApI-gvUqc";
+      const apiKey2 = "AIzaSyAsATYfUvtkZ5EK4KQ7AXmsj9Mq60S3Z3s";
       const query = "all the light";
 
       const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&printType=books&projection=full&key=${apiKey}`;
@@ -75,32 +77,33 @@ const Shop = () => {
                 <div className="recommendedBooks__card flex items-center">
                   {recommendedBooks.map((book, index) => (
                     <li key={index}>
-                      <div className="recomended__card flex items-center gap-x-[23px]">
-                        {book.volumeInfo.imageLinks &&
-                          book.volumeInfo.imageLinks.thumbnail && (
-                            <img
-                              className="recomended__card__img"
-                              src={book.volumeInfo.imageLinks.thumbnail}
-                              alt={`${book.volumeInfo.title}`}
-                            />
-                          )}
-                        <span className="box__span">
-                          <h3 className="recomended__card__text max-w-[304px] w-full font-normal text-[25px] leading-[35px] text-black">
-                            {book.volumeInfo.title}
-                          </h3>
-                          <p className="recomended__card__authors max-w-[134px] w-full text-[#00000085] font-normal text-[16px] leading-[19px] pt-[18px] pb-[18px]">
-                            {book.volumeInfo.authors}
-                          </p>
-                          <img src={star} alt="star votes" />
-                          <p className="recomended__card__lorem max-w-[305px] w-full text-[#00000059] font-normal text-[16px] leading-[25px] tracking-[0.3%] pt-[13px]">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit. Purus morbi eleifend enim, tristique
-                          </p>
-                          <button className="btn border-[FF971D]">
-                            Buy now
-                          </button>
-                        </span>
-                      </div>
+                      <Link to={`/home/${book?.id}`}>
+                        <div className="recomended__card flex items-center gap-x-[23px]">
+                          {book.volumeInfo.imageLinks &&
+                            book.volumeInfo.imageLinks.thumbnail && (
+                              <img
+                                className="recomended__card__img"
+                                src={book.volumeInfo.imageLinks.thumbnail}
+                                alt={`${book.volumeInfo.title}`}
+                              />
+                            )}
+                          <span className="box__span">
+                            <h3 className="recomended__card__text max-w-[304px] w-full font-normal text-[25px] leading-[35px] text-black">
+                              {book.volumeInfo.title}
+                            </h3>
+                            <p className="recomended__card__authors max-w-[134px] w-full text-[#00000085] font-normal text-[16px] leading-[19px] pt-[18px] pb-[18px]">
+                              {book.volumeInfo.authors}
+                            </p>
+                            <img src={star} alt="star votes" />
+                            <p className="recomended__card__lorem max-w-[305px] w-full text-[#00000059] font-normal text-[16px] leading-[25px] tracking-[0.3%] pt-[13px]">
+                              {book.volumeInfo.description.slice(0, 80)}
+                            </p>
+                            <button className="btn border-[FF971D]">
+                              Buy now
+                            </button>
+                          </span>
+                        </div>
+                      </Link>
                     </li>
                   ))}
                 </div>

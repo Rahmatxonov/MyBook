@@ -1,6 +1,6 @@
 import "./index.css";
 import Home from "./pages/HomePage/Home";
-// import Explorer from "./pages/CheckoutPage/Checkout";
+import Explorer from "./pages/CheckoutPage/Chechout";
 import Shop from "./pages/ShopPage/Shop";
 import Blog from "./pages/BlogPage/Blog";
 import NotFound from "./components/NotFound";
@@ -14,6 +14,7 @@ function App() {
         <Route path="/explorer" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/home/:id" element={<Explorer />} />
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -4,6 +4,8 @@ import Sidebar from "../../components/Sidebar";
 import Recommended from "../../components/Recommended";
 import Populer from "../../components/Populer";
 import Footer from "../../components/Footer";
+import Story from "../../components/Story";
+import Like from "../../components/Like";
 const Home = () => {
   return (
     <>
@@ -19,7 +21,7 @@ const Home = () => {
           right: "-30px",
         }}
       />
-      <div className="flex">
+      <div className="flex justify-between">
         <Sidebar
           genres={[
             "All Genres",
@@ -36,9 +38,15 @@ const Home = () => {
             "Trending",
           ]}
         />{" "}
-        <div className="w-full">
-          <Recommended />
-          <Populer />
+        <div>
+          <div>
+            <Recommended />
+            <Populer />
+          </div>
+          <div>
+            <Story />
+            <Like />
+          </div>
         </div>
       </div>
       <Footer />
